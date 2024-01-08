@@ -1,3 +1,90 @@
+
+## DDL - Definition Data Language
+- Create
+- Alter
+- Truncate
+- Comment
+- Rename
+- Drop
+
+## DML - Definition Model Language
+- Insert
+- Select
+- Delete
+- Update
+
+## DCL - Data Control Language
+- Grant - Brinda privilegios
+- Revoke - Quita privilegios
+
+## TCL - Transaction Control Language
+- Commit - Guarda el trabajo hecho
+- Rollback - Deshace la modificación del último commit
+- Set -> Establece aislamiento de transacción
+- Savepoint - Salva un punto al que se puede retroceder en la transacción
+
+# SQL Commands
+
+### JOIN
+- Inner join
+- Left join
+- Right join
+- Full join
+- Self join
+
+### AGGREGATION
+- Sum
+- Avg
+- Count
+- Min
+- Max
+
+### GROUP BY
+- Group by
+- Having
+
+### ALIAS
+- As
+
+### ORDER BY
+- Order by asc
+- Order by desc
+
+### WHERE
+- Exist
+- Like
+- In
+- Not
+- Or , And
+- All
+- Between
+- Any
+
+# Normalization
+
+## 1st Normal Form
+- Todos los atributos son atómicos
+- La tabla contiene una clave primaria unica (PK)
+- La PK no contiene atributos nulos
+- No debe existir variación en el número de columnas
+- Los campos no clave deben identificarse por la clave (Dependencia Funcional)
+- Debe existir una independencia del orden tanto de las filas como de las columnas
+
+## 2nd Normal Form
+- Una relación está en 2FN si está en 1FN
+- Los atributos que no forman parte de ninguna clave dependen de forma completa de la PK (Reflexiva)
+- Puedo obtener los datos de las otras columnas a través de su PK (Aumentativa)
+- Podemos usar llaves foráneas (FK) para obtener datos de las otras tablas (Transitiva)
+- Si tengo una tabla A -> B y B -> C, NO necesito A->C para poder obtener los datos
+
+## 3rd Normal Form
+- Una relación está en 3FN si está en 2FN
+
+## 4th Normal Form
+- No podemos repetir datos en una tabla
+- Solo tenemos combinaciones únicas
+- Todas las llaves van a poder ser, sí o sí, PKs
+
 ## Truncate vs Delete
 
 1. **Efficiency:**
@@ -90,7 +177,7 @@
 - *Vertical scalability can be costly.*
 - *Not ideal for rapidly evolving schemas or applications requiring high write throughput.*
 
-## PRINCIPIOS ACID PARA TRANSACCIONES
+## ACID principles to transactions
 
 - A transaccion es una operacion en SQL que modificia, agrega, elimina o toma datos de las tablas. Tiene que seguir los siguientes principios ACID:
 
@@ -104,6 +191,8 @@
 - I -> Isolation
     - Aislamiento de transacciones quiere decir que cada transaccion se ejecuta independiemtente de otra de manera ordenada sin afectar la anterior o la posterior.
 
-- D ->  Durability
+- D -> Durability
     - Si una transaccion ha sido finalizada y la base de datos se apaga y se vuelve a prender los datos van seguir estando alli.
     - Si incluso falla tambien puedes recuperar tu data
+
+## Normalization 
