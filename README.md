@@ -7,7 +7,7 @@
 - Rename
 - Drop
 
-## DML - Definition Model Language
+## DML - Definition Manipulation Language
 - Insert
 - Select
 - Delete
